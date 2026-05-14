@@ -11,10 +11,10 @@ export default function Page() {
   return (
     <>
       {/* Background */}
-      <div className="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]" />
+      <div className="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%sm:_-25%,rgbasm:(125,119,198,0.3),rgba(245,245,245,0))]" />
 
       {/* Layout */}
-      <div className="absolute inset-0 flex items-center justify-center gap-4">
+      <div className="absolute inset-0  flex items-center justify-center gap-4">
 
         <div className="flex flex-col gap-4">
 
@@ -27,8 +27,8 @@ export default function Page() {
                 expandedCard === "card1"
                   ? "w-[80vw] h-[70vh] z-50"
                   : expandedCard
-                  ? "w-24 h-24 scale-75 opacity-40"
-                  : "w-40 h-40 md:w-55 md:h-55"
+                  ?"w-20 h-20 md:w-45 md:h-45 scale-75 opacity-30"
+                  : " w-25 h-25 md:w-45 md:h-45"
               }
 
               bg-red-500
@@ -48,8 +48,8 @@ export default function Page() {
                 expandedCard === "card2"
                   ? "w-[80vw] h-[70vh] z-50"
                   : expandedCard
-                  ? "w-24 h-24 scale-75 opacity-40"
-                  : "w-40 h-40 md:w-55 md:h-55"
+                  ? "w-20 h-20 md:w-45 md:h-45 scale-75 opacity-30"
+                  : "w-25 h-25 md:w-45 md:h-45"
               }
 
               bg-red-900
@@ -73,8 +73,8 @@ export default function Page() {
                 expandedCard === "card3"
                   ? "w-[80vw] h-[70vh] z-50"
                   : expandedCard
-                  ? "w-24 h-24 scale-75 opacity-40"
-                  : "w-40 h-40 md:w-55 md:h-55"
+                  ?"w-20 h-20 md:w-45 md:h-45 scale-75 opacity-30"
+                  : "w-25 h-25 md:w-45 md:h-45"
               }
 
               bg-blue-500
@@ -94,8 +94,8 @@ export default function Page() {
                 expandedCard === "card4"
                   ? "w-[80vw] h-[70vh] z-50"
                   : expandedCard
-                  ? "w-24 h-24 scale-75 opacity-40"
-                  : "w-40 h-40 md:w-55 md:h-55"
+                  ?"w-20 h-20 md:w-45 md:h-45 scale-75 opacity-30"
+                  : "w-25 h-25 md:w-45 md:h-45"
               }
 
               bg-yellow-500

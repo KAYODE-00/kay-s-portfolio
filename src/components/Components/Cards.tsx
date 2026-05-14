@@ -40,7 +40,7 @@ function Cards({
         ${
           isExpanded
             ? ""
-            : "w-40 h-40 md:w-55 md:h-55 "
+            : ""
         }
 
         ${styles}
