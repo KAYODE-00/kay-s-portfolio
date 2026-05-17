@@ -4,9 +4,7 @@ import Cards from "@/components/Components/Cards";
 import { useState } from "react";
 
 export default function Page() {
-
-  const [expandedCard, setExpandedCard] =
-    useState<string | null>(null);
+  const [expandedCard, setExpandedCard] = useState<string | null>(null);
 
   return (
     <>
@@ -15,9 +13,7 @@ export default function Page() {
 
       {/* Layout */}
       <div className="absolute inset-0 flex items-center justify-center gap-2 md:gap-4 overflow-hidden">
-
         <div className="flex flex-col gap-2 md:gap-4">
-
           {/* CARD 1 */}
           <Cards
             id="card1"
@@ -27,38 +23,231 @@ export default function Page() {
                 expandedCard === "card1"
                   ? "w-[70vw] h-[70vh] z-50 md:mt-20"
                   : expandedCard
-                  ? "w-15 h-15 md:w-45 md:h-45 scale-75 opacity-30"
-                  : "w-25 h-25 md:w-45 md:h-45"
+                    ? "w-15 h-15 md:w-45 md:h-45 scale-75 opacity-30"
+                    : "w-25 h-25 md:w-45 md:h-45"
               }
 
-              bg-red-500
+             
               transition-all
               duration-500
             `}
             expandedCard={expandedCard}
             setExpandedCard={setExpandedCard}
           >
-
             <div className="flex flex-col gap-6 h-full">
+              <h1 className="text-4xl font-bold">Work</h1>
 
-              <h1 className="text-4xl font-bold">
-                Work
-              </h1>
+              {/* content */}
+              <div className=" grid grid-cols-1 md:grid-cols-1 gap-3 md:gap-6">
+                {/* button */}
+                <div className="flex items-center justify-center gap-3">
+                  <button className="bg-black/20 text-[0.9rem]  rounded-2xl p-2">
+                    Freelance Projects
+                  </button>
 
-              <div className="grid md:grid-cols-2 gap-4">
-
-                <div className="bg-black/20 rounded-2xl p-4">
-                  Freelance Projects
+                  <button className="bg-black/20 text-[0.9rem] rounded-2xl p-2">
+                    UI/UX Designs
+                  </button>
                 </div>
 
-                <div className="bg-black/20 rounded-2xl p-4">
-                  UI/UX Designs
-                </div>
+                <div className="grid md:grid-cols-2 ">
+                  <div className="bg-black/20 rounded-2xl gap-5 p-4 flex flex-col">
+                    <img src="/brickbase.png" alt="" className="" />
+                    <div className="h-4 bg-black/20 rounded-full mt-5 flex flex-col md:flex-row justify-between px-2">
+                      <h1 className="text-xl font-bold ">ProjTitle</h1>
 
+                      <div className="h-4 bg-black/20 rounded-full mt-2  flex flex-col md:flex-row justify-between md:items-center  md:gap-5">
+                        <p className="">React.js, Tailwind, JavaScript</p>
+
+                        <a
+                          href="https://brickbase-six.vercel.app/"
+                          className=""
+                        >
+                          View Project
+                        </a>
+                      </div>
+                    </div>
+
+                    <p className="mt-[5rem] md:mt-2 p-3 text-sm text-neutral-300">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Ab, quisquam. Lorem ipsum dolor sit amet consectetur
+                      adipisicing elit. Ab, quisquam. Lorem ipsum dolor sit amet
+                      consectetur adipisicing elit. Ab, quisquam. Lorem ipsum
+                      dolor sit amet consectetur adipisicing elit. Ab, quisquam.
+                    </p>
+                  </div>{" "}
+                  <div className="bg-black/20 rounded-2xl gap-5 p-4 flex flex-col">
+                    <img src="/brickbase.png" alt="" className="" />
+                    <div className="h-4 bg-black/20 rounded-full mt-5 flex flex-col md:flex-row justify-between px-2">
+                      <h1 className="text-xl font-bold ">ProjTitle</h1>
+
+                      <div className="h-4 bg-black/20 rounded-full mt-2  flex flex-col md:flex-row justify-between md:items-center  md:gap-5">
+                        <p className="text-[0.9rem]">React.js Tailwind JavaScript</p>
+
+                        <a
+                          href="https://brickbase-six.vercel.app/"
+                          className=""
+                        >
+                          View Project
+                        </a>
+                      </div>
+                    </div>
+
+                    <p className="mt-[5rem] md:mt-2 p-3 text-sm text-neutral-300">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Ab, quisquam. Lorem ipsum dolor sit amet consectetur
+                      adipisicing elit. Ab, quisquam. Lorem ipsum dolor sit amet
+                      consectetur adipisicing elit. Ab, quisquam. Lorem ipsum
+                      dolor sit amet consectetur adipisicing elit. Ab, quisquam.
+                    </p>
+                  </div>                  <div className="bg-black/20 rounded-2xl gap-5 p-4 flex flex-col">
+                    <img src="/brickbase.png" alt="" className="" />
+                    <div className="h-4 bg-black/20 rounded-full mt-5 flex flex-col md:flex-row justify-between px-2">
+                      <h1 className="text-xl font-bold ">ProjTitle</h1>
+
+                      <div className="h-4 bg-black/20 rounded-full mt-2  flex flex-col md:flex-row justify-between md:items-center  md:gap-5">
+                        <p className="text-[0.9rem]">React.js Tailwind JavaScript</p>
+
+                        <a
+                          href="https://brickbase-six.vercel.app/"
+                          className=""
+                        >
+                          View Project
+                        </a>
+                      </div>
+                    </div>
+
+                    <p className="mt-[5rem] md:mt-2 p-3 text-sm text-neutral-300">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Ab, quisquam. Lorem ipsum dolor sit amet consectetur
+                      adipisicing elit. Ab, quisquam. Lorem ipsum dolor sit amet
+                      consectetur adipisicing elit. Ab, quisquam. Lorem ipsum
+                      dolor sit amet consectetur adipisicing elit. Ab, quisquam.
+                    </p>
+                  </div>                  <div className="bg-black/20 rounded-2xl gap-5 p-4 flex flex-col">
+                    <img src="/brickbase.png" alt="" className="" />
+                    <div className="h-4 bg-black/20 rounded-full mt-5 flex flex-col md:flex-row justify-between px-2">
+                      <h1 className="text-xl font-bold ">ProjTitle</h1>
+
+                      <div className="h-4 bg-black/20 rounded-full mt-2  flex flex-col md:flex-row justify-between md:items-center  md:gap-5">
+                        <p className="text-[0.9rem]">React.js Tailwind JavaScript</p>
+
+                        <a
+                          href="https://brickbase-six.vercel.app/"
+                          className=""
+                        >
+                          View Project
+                        </a>
+                      </div>
+                    </div>
+
+                    <p className="mt-[5rem] md:mt-2 p-3 text-sm text-neutral-300">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Ab, quisquam. Lorem ipsum dolor sit amet consectetur
+                      adipisicing elit. Ab, quisquam. Lorem ipsum dolor sit amet
+                      consectetur adipisicing elit. Ab, quisquam. Lorem ipsum
+                      dolor sit amet consectetur adipisicing elit. Ab, quisquam.
+                    </p>
+                  </div>                  <div className="bg-black/20 rounded-2xl gap-5 p-4 flex flex-col">
+                    <img src="/brickbase.png" alt="" className="" />
+                    <div className="h-4 bg-black/20 rounded-full mt-5 flex flex-col md:flex-row justify-between px-2">
+                      <h1 className="text-xl font-bold ">ProjTitle</h1>
+
+                      <div className="h-4 bg-black/20 rounded-full mt-2  flex flex-col md:flex-row justify-between md:items-center  md:gap-5">
+                        <p className="text-[0.9rem]">React.js Tailwind JavaScript</p>
+
+                        <a
+                          href="https://brickbase-six.vercel.app/"
+                          className=""
+                        >
+                          View Project
+                        </a>
+                      </div>
+                    </div>
+
+                    <p className="mt-[5rem] md:mt-2 p-3 text-sm text-neutral-300">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Ab, quisquam. Lorem ipsum dolor sit amet consectetur
+                      adipisicing elit. Ab, quisquam. Lorem ipsum dolor sit amet
+                      consectetur adipisicing elit. Ab, quisquam. Lorem ipsum
+                      dolor sit amet consectetur adipisicing elit. Ab, quisquam.
+                    </p>
+                  </div>                  <div className="bg-black/20 rounded-2xl gap-5 p-4 flex flex-col">
+                    <img src="/brickbase.png" alt="" className="" />
+                    <div className="h-4 bg-black/20 rounded-full mt-5 flex flex-col md:flex-row justify-between px-2">
+                      <h1 className="text-xl font-bold ">ProjTitle</h1>
+
+                      <div className="h-4 bg-black/20 rounded-full mt-2  flex flex-col md:flex-row justify-between md:items-center  md:gap-5">
+                        <p className="text-[0.9rem]">React.js Tailwind JavaScript</p>
+
+                        <a
+                          href="https://brickbase-six.vercel.app/"
+                          className=""
+                        >
+                          View Project
+                        </a>
+                      </div>
+                    </div>
+
+                    <p className="mt-[5rem] md:mt-2 p-3 text-sm text-neutral-300">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Ab, quisquam. Lorem ipsum dolor sit amet consectetur
+                      adipisicing elit. Ab, quisquam. Lorem ipsum dolor sit amet
+                      consectetur adipisicing elit. Ab, quisquam. Lorem ipsum
+                      dolor sit amet consectetur adipisicing elit. Ab, quisquam.
+                    </p>
+                  </div>                  <div className="bg-black/20 rounded-2xl gap-5 p-4 flex flex-col">
+                    <img src="/brickbase.png" alt="" className="" />
+                    <div className="h-4 bg-black/20 rounded-full mt-5 flex flex-col md:flex-row justify-between px-2">
+                      <h1 className="text-xl font-bold ">ProjTitle</h1>
+
+                      <div className="h-4 bg-black/20 rounded-full mt-2  flex flex-col md:flex-row justify-between md:items-center  md:gap-5">
+                        <p className="text-[0.9rem]">React.js Tailwind JavaScript</p>
+
+                        <a
+                          href="https://brickbase-six.vercel.app/"
+                          className=""
+                        >
+                          View Project
+                        </a>
+                      </div>
+                    </div>
+
+                    <p className="mt-[5rem] md:mt-2 p-3 text-sm text-neutral-300">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Ab, quisquam. Lorem ipsum dolor sit amet consectetur
+                      adipisicing elit. Ab, quisquam. Lorem ipsum dolor sit amet
+                      consectetur adipisicing elit. Ab, quisquam. Lorem ipsum
+                      dolor sit amet consectetur adipisicing elit. Ab, quisquam.
+                    </p>
+                  </div>                  <div className="bg-black/20 rounded-2xl gap-5 p-4 flex flex-col">
+                    <img src="/brickbase.png" alt="" className="" />
+                    <div className="h-4 bg-black/20 rounded-full mt-5 flex flex-col md:flex-row justify-between px-2">
+                      <h1 className="text-xl font-bold ">ProjTitle</h1>
+
+                      <div className="h-4 bg-black/20 rounded-full mt-2  flex flex-col md:flex-row justify-between md:items-center  md:gap-5">
+                        <p className="text-[0.9rem]">React.js Tailwind JavaScript</p>
+
+                        <a
+                          href="https://brickbase-six.vercel.app/"
+                          className=""
+                        >
+                          View Project
+                        </a>
+                      </div>
+                    </div>
+
+                    <p className="mt-[5rem] md:mt-2 p-3 text-sm text-neutral-300">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Ab, quisquam. Lorem ipsum dolor sit amet consectetur
+                      adipisicing elit. Ab, quisquam. Lorem ipsum dolor sit amet
+                      consectetur adipisicing elit. Ab, quisquam. Lorem ipsum
+                      dolor sit amet consectetur adipisicing elit. Ab, quisquam.
+                    </p>
+                  </div>
+                </div>
               </div>
-
             </div>
-
           </Cards>
 
           {/* CARD 2 */}
@@ -70,52 +259,38 @@ export default function Page() {
                 expandedCard === "card2"
                   ? "w-[70vw] h-[70vh] md:mb-20 z-50"
                   : expandedCard
-                  ? "w-15 h-15 md:w-45 md:h-45 scale-75 opacity-30"
-                  : "w-25 h-25 md:w-45 md:h-45"
+                    ? "w-15 h-15 md:w-45 md:h-45 scale-75 opacity-30"
+                    : "w-25 h-25 md:w-45 md:h-45"
               }
 
-              bg-emerald-500
+           
               transition-all
               duration-500
             `}
             expandedCard={expandedCard}
             setExpandedCard={setExpandedCard}
           >
-
             <div className="flex flex-col gap-6">
-
-              <h1 className="text-4xl font-bold">
-                Stacks
-              </h1>
+              <h1 className="text-4xl font-bold">Stacks</h1>
 
               <div className="flex flex-wrap gap-3">
-
-                <div className="px-4 py-2 rounded-xl bg-black/20">
-                  Next.js
-                </div>
+                <div className="px-4 py-2 rounded-xl bg-black/20">Next.js</div>
 
                 <div className="px-4 py-2 rounded-xl bg-black/20">
                   TypeScript
                 </div>
 
-                <div className="px-4 py-2 rounded-xl bg-black/20">
-                  Tailwind
-                </div>
+                <div className="px-4 py-2 rounded-xl bg-black/20">Tailwind</div>
 
                 <div className="px-4 py-2 rounded-xl bg-black/20">
                   Framer Motion
                 </div>
-
               </div>
-
             </div>
-
           </Cards>
-
         </div>
 
         <div className="flex flex-col gap-2 md:gap-4">
-
           {/* CARD 3 */}
           <Cards
             id="card3"
@@ -125,38 +300,28 @@ export default function Page() {
                 expandedCard === "card3"
                   ? "w-[70vw] h-[70vh] md:mt-20 z-50"
                   : expandedCard
-                  ? "w-15 h-15 md:w-45 md:h-45 scale-75 opacity-30"
-                  : "w-25 h-25 md:w-45 md:h-45"
+                    ? "w-15 h-15 md:w-45 md:h-45 scale-75 opacity-30"
+                    : "w-25 h-25 md:w-45 md:h-45"
               }
 
-              bg-blue-500
+         
               transition-all
               duration-500
             `}
             expandedCard={expandedCard}
             setExpandedCard={setExpandedCard}
           >
-
             <div className="flex flex-col gap-6">
-
-              <h1 className="text-4xl font-bold">
-                Projects
-              </h1>
+              <h1 className="text-4xl font-bold">Projects</h1>
 
               <div className="grid md:grid-cols-2 gap-4">
-
-                <div className="rounded-2xl bg-black/20 p-4">
-                  QAY Builder
-                </div>
+                <div className="rounded-2xl bg-black/20 p-4">QAY Builder</div>
 
                 <div className="rounded-2xl bg-black/20 p-4">
                   Portfolio System
                 </div>
-
               </div>
-
             </div>
-
           </Cards>
 
           {/* CARD 4 */}
@@ -168,46 +333,30 @@ export default function Page() {
                 expandedCard === "card4"
                   ? "w-[70vw] h-[70vh] md:mb-20 z-50"
                   : expandedCard
-                  ? "w-15 h-15 md:w-45 md:h-45 scale-75 opacity-30"
-                  : "w-25 h-25 md:w-45 md:h-45"
+                    ? "w-15 h-15 md:w-45 md:h-45 scale-75 opacity-30"
+                    : "w-25 h-25 md:w-45 md:h-45"
               }
 
-              bg-yellow-500
+       
               transition-all
               duration-500
             `}
             expandedCard={expandedCard}
             setExpandedCard={setExpandedCard}
           >
-
             <div className="flex flex-col gap-6">
-
-              <h1 className="text-4xl font-bold">
-                Contact
-              </h1>
+              <h1 className="text-4xl font-bold">Contact</h1>
 
               <div className="flex flex-col gap-3">
+                <div className="bg-black/20 p-4 rounded-2xl">Email</div>
 
-                <div className="bg-black/20 p-4 rounded-2xl">
-                  Email
-                </div>
+                <div className="bg-black/20 p-4 rounded-2xl">Twitter</div>
 
-                <div className="bg-black/20 p-4 rounded-2xl">
-                  Twitter
-                </div>
-
-                <div className="bg-black/20 p-4 rounded-2xl">
-                  GitHub
-                </div>
-
+                <div className="bg-black/20 p-4 rounded-2xl">GitHub</div>
               </div>
-
             </div>
-
           </Cards>
-
         </div>
-
       </div>
     </>
   );

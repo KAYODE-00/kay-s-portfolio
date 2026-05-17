@@ -11,9 +11,7 @@ type CardProps = {
 
   expandedCard: string | null;
 
-  setExpandedCard: React.Dispatch<
-    React.SetStateAction<string | null>
-  >;
+  setExpandedCard: React.Dispatch<React.SetStateAction<string | null>>;
 };
 
 function Cards({
@@ -24,22 +22,17 @@ function Cards({
   expandedCard,
   setExpandedCard,
 }: CardProps) {
-
   const isExpanded = expandedCard === id;
 
   // ONLY EXPAND
   const handleClick = () => {
-
     if (!isExpanded) {
       setExpandedCard(id);
     }
   };
 
   // CLOSE BUTTON
-  const handleClose = (
-    e: React.MouseEvent<HTMLButtonElement>
-  ) => {
-
+  const handleClose = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
 
     setExpandedCard(null);
@@ -49,18 +42,19 @@ function Cards({
     <div
       onClick={handleClick}
       className={`
-        relative
-        overflow-hidden
-        rounded-3xl
-        border
-        border-neutral-700/50
-        backdrop-blur-sm
-        cursor-pointer
+         relative
+  overflow-y-auto
+  hide-scrollbar
+  scroll-smooth
 
-        ${styles}
+  rounded-3xl
+  border
+  border-neutral-700/50
+  backdrop-blur-sm
+  cursor-pointer
+ ${styles}
       `}
     >
-
       {/* CLOSE BUTTON */}
       {isExpanded && (
         <button
@@ -83,19 +77,10 @@ function Cards({
       )}
 
       {/* CARD TITLE */}
-      {!isExpanded && (
-        <div className="p-4 font-medium">
-          {title}
-        </div>
-      )}
+      {!isExpanded && <div className="p-4 font-medium">{title}</div>}
 
       {/* EXPANDED CONTENT */}
-      {isExpanded && (
-        <div className="w-full h-full p-5">
-          {children}
-        </div>
-      )}
-
+      {isExpanded && <div className="w-full h-full p-5">{children}</div>}
     </div>
   );
 }
