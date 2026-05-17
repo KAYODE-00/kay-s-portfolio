@@ -51,7 +51,7 @@ export default function Page() {
                   </button>
                 </div>
 
-                <div className="grid md:grid-cols-2 ">
+                <div className="grid md:grid-cols-2 gap-4 h-full">
 {projects.map((project) => {
   return (
     <div
