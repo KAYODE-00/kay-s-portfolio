@@ -1,5 +1,6 @@
 "use client";
 
+import { projects } from "@/data/projects";
 import Cards from "@/components/Components/Cards";
 import { useState } from "react";
 
@@ -51,200 +52,46 @@ export default function Page() {
                 </div>
 
                 <div className="grid md:grid-cols-2 ">
-                  <div className="bg-black/20 rounded-2xl gap-5 p-4 flex flex-col">
-                    <img src="/brickbase.png" alt="" className="" />
-                    <div className="h-4 bg-black/20 rounded-full mt-5 flex flex-col md:flex-row justify-between px-2">
-                      <h1 className="text-xl font-bold ">ProjTitle</h1>
+{projects.map((project) => {
+  return (
+    <div
+      key={project.id}
+      className="bg-black/20 rounded-2xl gap-5 p-4 flex flex-col border border-neutral-700/50"
+    >
+      {/* IMAGE */}
+      <img
+        src="/brickbase.png"
+        alt={project.title}
+        className="rounded-xl object-cover"
+      />
 
-                      <div className="h-4 bg-black/20 rounded-full mt-2  flex flex-col md:flex-row justify-between md:items-center  md:gap-5">
-                        <p className="">React.js, Tailwind, JavaScript</p>
+      {/* HEADER */}
+      <div className="flex flex-col md:flex-row justify-between gap-3 md:items-center">
+        <h1 className="text-xl font-bold">
+          {project.title}
+        </h1>
 
-                        <a
-                          href="https://brickbase-six.vercel.app/"
-                          className=""
-                        >
-                          View Project
-                        </a>
-                      </div>
-                    </div>
+        <a
+          href="#"
+          className="text-sm text-blue-400 hover:underline"
+        >
+          View Project
+        </a>
+      </div>
 
-                    <p className="mt-[5rem] md:mt-2 p-3 text-sm text-neutral-300">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Ab, quisquam. Lorem ipsum dolor sit amet consectetur
-                      adipisicing elit. Ab, quisquam. Lorem ipsum dolor sit amet
-                      consectetur adipisicing elit. Ab, quisquam. Lorem ipsum
-                      dolor sit amet consectetur adipisicing elit. Ab, quisquam.
-                    </p>
-                  </div>{" "}
-                  <div className="bg-black/20 rounded-2xl gap-5 p-4 flex flex-col">
-                    <img src="/brickbase.png" alt="" className="" />
-                    <div className="h-4 bg-black/20 rounded-full mt-5 flex flex-col md:flex-row justify-between px-2">
-                      <h1 className="text-xl font-bold ">ProjTitle</h1>
+      {/* TECH STACK */}
+      <p className="text-sm text-neutral-400">
+        {project.technologies}
+      </p>
 
-                      <div className="h-4 bg-black/20 rounded-full mt-2  flex flex-col md:flex-row justify-between md:items-center  md:gap-5">
-                        <p className="text-[0.9rem]">React.js Tailwind JavaScript</p>
-
-                        <a
-                          href="https://brickbase-six.vercel.app/"
-                          className=""
-                        >
-                          View Project
-                        </a>
-                      </div>
-                    </div>
-
-                    <p className="mt-[5rem] md:mt-2 p-3 text-sm text-neutral-300">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Ab, quisquam. Lorem ipsum dolor sit amet consectetur
-                      adipisicing elit. Ab, quisquam. Lorem ipsum dolor sit amet
-                      consectetur adipisicing elit. Ab, quisquam. Lorem ipsum
-                      dolor sit amet consectetur adipisicing elit. Ab, quisquam.
-                    </p>
-                  </div>                  <div className="bg-black/20 rounded-2xl gap-5 p-4 flex flex-col">
-                    <img src="/brickbase.png" alt="" className="" />
-                    <div className="h-4 bg-black/20 rounded-full mt-5 flex flex-col md:flex-row justify-between px-2">
-                      <h1 className="text-xl font-bold ">ProjTitle</h1>
-
-                      <div className="h-4 bg-black/20 rounded-full mt-2  flex flex-col md:flex-row justify-between md:items-center  md:gap-5">
-                        <p className="text-[0.9rem]">React.js Tailwind JavaScript</p>
-
-                        <a
-                          href="https://brickbase-six.vercel.app/"
-                          className=""
-                        >
-                          View Project
-                        </a>
-                      </div>
-                    </div>
-
-                    <p className="mt-[5rem] md:mt-2 p-3 text-sm text-neutral-300">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Ab, quisquam. Lorem ipsum dolor sit amet consectetur
-                      adipisicing elit. Ab, quisquam. Lorem ipsum dolor sit amet
-                      consectetur adipisicing elit. Ab, quisquam. Lorem ipsum
-                      dolor sit amet consectetur adipisicing elit. Ab, quisquam.
-                    </p>
-                  </div>                  <div className="bg-black/20 rounded-2xl gap-5 p-4 flex flex-col">
-                    <img src="/brickbase.png" alt="" className="" />
-                    <div className="h-4 bg-black/20 rounded-full mt-5 flex flex-col md:flex-row justify-between px-2">
-                      <h1 className="text-xl font-bold ">ProjTitle</h1>
-
-                      <div className="h-4 bg-black/20 rounded-full mt-2  flex flex-col md:flex-row justify-between md:items-center  md:gap-5">
-                        <p className="text-[0.9rem]">React.js Tailwind JavaScript</p>
-
-                        <a
-                          href="https://brickbase-six.vercel.app/"
-                          className=""
-                        >
-                          View Project
-                        </a>
-                      </div>
-                    </div>
-
-                    <p className="mt-[5rem] md:mt-2 p-3 text-sm text-neutral-300">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Ab, quisquam. Lorem ipsum dolor sit amet consectetur
-                      adipisicing elit. Ab, quisquam. Lorem ipsum dolor sit amet
-                      consectetur adipisicing elit. Ab, quisquam. Lorem ipsum
-                      dolor sit amet consectetur adipisicing elit. Ab, quisquam.
-                    </p>
-                  </div>                  <div className="bg-black/20 rounded-2xl gap-5 p-4 flex flex-col">
-                    <img src="/brickbase.png" alt="" className="" />
-                    <div className="h-4 bg-black/20 rounded-full mt-5 flex flex-col md:flex-row justify-between px-2">
-                      <h1 className="text-xl font-bold ">ProjTitle</h1>
-
-                      <div className="h-4 bg-black/20 rounded-full mt-2  flex flex-col md:flex-row justify-between md:items-center  md:gap-5">
-                        <p className="text-[0.9rem]">React.js Tailwind JavaScript</p>
-
-                        <a
-                          href="https://brickbase-six.vercel.app/"
-                          className=""
-                        >
-                          View Project
-                        </a>
-                      </div>
-                    </div>
-
-                    <p className="mt-[5rem] md:mt-2 p-3 text-sm text-neutral-300">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Ab, quisquam. Lorem ipsum dolor sit amet consectetur
-                      adipisicing elit. Ab, quisquam. Lorem ipsum dolor sit amet
-                      consectetur adipisicing elit. Ab, quisquam. Lorem ipsum
-                      dolor sit amet consectetur adipisicing elit. Ab, quisquam.
-                    </p>
-                  </div>                  <div className="bg-black/20 rounded-2xl gap-5 p-4 flex flex-col">
-                    <img src="/brickbase.png" alt="" className="" />
-                    <div className="h-4 bg-black/20 rounded-full mt-5 flex flex-col md:flex-row justify-between px-2">
-                      <h1 className="text-xl font-bold ">ProjTitle</h1>
-
-                      <div className="h-4 bg-black/20 rounded-full mt-2  flex flex-col md:flex-row justify-between md:items-center  md:gap-5">
-                        <p className="text-[0.9rem]">React.js Tailwind JavaScript</p>
-
-                        <a
-                          href="https://brickbase-six.vercel.app/"
-                          className=""
-                        >
-                          View Project
-                        </a>
-                      </div>
-                    </div>
-
-                    <p className="mt-[5rem] md:mt-2 p-3 text-sm text-neutral-300">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Ab, quisquam. Lorem ipsum dolor sit amet consectetur
-                      adipisicing elit. Ab, quisquam. Lorem ipsum dolor sit amet
-                      consectetur adipisicing elit. Ab, quisquam. Lorem ipsum
-                      dolor sit amet consectetur adipisicing elit. Ab, quisquam.
-                    </p>
-                  </div>                  <div className="bg-black/20 rounded-2xl gap-5 p-4 flex flex-col">
-                    <img src="/brickbase.png" alt="" className="" />
-                    <div className="h-4 bg-black/20 rounded-full mt-5 flex flex-col md:flex-row justify-between px-2">
-                      <h1 className="text-xl font-bold ">ProjTitle</h1>
-
-                      <div className="h-4 bg-black/20 rounded-full mt-2  flex flex-col md:flex-row justify-between md:items-center  md:gap-5">
-                        <p className="text-[0.9rem]">React.js Tailwind JavaScript</p>
-
-                        <a
-                          href="https://brickbase-six.vercel.app/"
-                          className=""
-                        >
-                          View Project
-                        </a>
-                      </div>
-                    </div>
-
-                    <p className="mt-[5rem] md:mt-2 p-3 text-sm text-neutral-300">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Ab, quisquam. Lorem ipsum dolor sit amet consectetur
-                      adipisicing elit. Ab, quisquam. Lorem ipsum dolor sit amet
-                      consectetur adipisicing elit. Ab, quisquam. Lorem ipsum
-                      dolor sit amet consectetur adipisicing elit. Ab, quisquam.
-                    </p>
-                  </div>                  <div className="bg-black/20 rounded-2xl gap-5 p-4 flex flex-col">
-                    <img src="/brickbase.png" alt="" className="" />
-                    <div className="h-4 bg-black/20 rounded-full mt-5 flex flex-col md:flex-row justify-between px-2">
-                      <h1 className="text-xl font-bold ">ProjTitle</h1>
-
-                      <div className="h-4 bg-black/20 rounded-full mt-2  flex flex-col md:flex-row justify-between md:items-center  md:gap-5">
-                        <p className="text-[0.9rem]">React.js Tailwind JavaScript</p>
-
-                        <a
-                          href="https://brickbase-six.vercel.app/"
-                          className=""
-                        >
-                          View Project
-                        </a>
-                      </div>
-                    </div>
-
-                    <p className="mt-[5rem] md:mt-2 p-3 text-sm text-neutral-300">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Ab, quisquam. Lorem ipsum dolor sit amet consectetur
-                      adipisicing elit. Ab, quisquam. Lorem ipsum dolor sit amet
-                      consectetur adipisicing elit. Ab, quisquam. Lorem ipsum
-                      dolor sit amet consectetur adipisicing elit. Ab, quisquam.
-                    </p>
-                  </div>
+      {/* DESCRIPTION */}
+      <p className="text-sm text-neutral-300">
+        {project.description}
+      </p>
+    </div>
+  );
+})}
+                  
                 </div>
               </div>
             </div>
