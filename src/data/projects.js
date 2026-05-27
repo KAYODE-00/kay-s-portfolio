@@ -12,70 +12,94 @@ export const projects = [
     id: 2,
     title: "QAY Builder",
     img: "/qaybuilder.png",
-    url: "Qay-theta.vercel.app",
-    description: "A no-code website builder with AI-assisted design system.",
-    technologies: "Next.js, TypeScript, Tailwind, Supabase",
+    url: "https://qay-theta.vercel.app/",
+    description:
+      "A no-code website builder with AI-assisted design system.",
+    technologies: "Next.js, TypeScript, Tailwind CSS, Supabase",
   },
   {
     id: 3,
     title: "Portfolio System",
     img: "/VscodePortfolio.png",
     url: "https://portfolio01-six-inky.vercel.app/",
-    description: "Dynamic portfolio generator with expandable card UI.",
-    technologies: "Next.js, Framer Motion, Tailwind",
+    description:
+      "Dynamic portfolio generator with expandable card UI.",
+    technologies: "Next.js, Framer Motion, Tailwind CSS",
   },
   {
     id: 4,
     title: "Spotify UI",
     img: "/spotifyUiClone.png",
     url: "https://portfolio01-six-inky.vercel.app/",
-    description: " ",
-    technologies: "React, Tailwind, Javascript",
+    description: "Spotify-inspired music streaming UI clone.",
+    technologies: "React.js, Tailwind CSS, JavaScript",
   },
   {
     id: 5,
-    title: "Youtube UI",
+    title: "YouTube UI",
     img: "/youtubeUiClone.png",
     url: "https://youtube-lite-seven-weld.vercel.app/",
-    description: "Realtime chat interface with modern UX design.",
-    technologies: "React, Socket.io, Tailwind",
+    description: "YouTube-inspired responsive video streaming interface.",
+    technologies: "React.js, Tailwind CSS, JavaScript",
   },
 ];
 
-export const stacks = [
+export const frontendStacks = [
   {
     id: 1,
-    title: "React",
+    title: "HTML",
     icon: "",
   },
   {
     id: 2,
-    title: "Next js",
+    title: "CSS",
     icon: "",
   },
   {
     id: 3,
-    title: "Typescript",
+    title: "JavaScript",
     icon: "",
   },
   {
     id: 4,
-    title: "Javascript",
+    title: "TypeScript",
     icon: "",
   },
   {
     id: 5,
-    title: "Tailwind",
+    title: "React.js",
     icon: "",
   },
   {
     id: 6,
-    title: "Supabase",
+    title: "Next.js",
     icon: "",
   },
   {
     id: 7,
-    title: "Figma",
+    title: "Tailwind CSS",
+    icon: "",
+  },
+  {
+    id: 8,
+    title: "Framer Motion",
+    icon: "",
+  },  {
+    id: 9,
+    title: "figma",
+    icon: "",
+  },
+];
+
+export const backendStacks = [
+  {
+    id: 1,
+    title: "Supabase",
+    icon: "",
+  },
+  {
+    id: 2,
+    title: "Firebase",
     icon: "",
   },
 ];
@@ -91,18 +115,24 @@ export const stacksBtn = [
   },
   {
     id: 3,
-    title: "UI",
-  },
-  {
-    id: 4,
     title: "No-code",
   },
-  //   {
-  //   id:5,
-  //   title:"Frontend"
-  // },
-  //   {
-  //   id:1,
-  //   title:"Frontend"
-  // },
+];
+
+export const noCodeStacks = [
+  {
+    id: 1,
+    title: "QAY Builder",
+    icon: "",
+  },
+  {
+    id: 2,
+    title: "WordPress",
+    icon: "",
+  },
+  {
+    id: 3,
+    title: "Wix",
+    icon: "",
+  },
 ];
