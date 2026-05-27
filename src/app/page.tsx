@@ -44,7 +44,7 @@ export default function Page() {
       {/* PAGE */}
       <main className="relative min-h-screen w-full overflow-hidden px-3 py-6 md:px-8">
         
-        <div className="max-w-[1700px] mx-auto grid grid-cols-1 xl:grid-cols-2 gap-4 items-start">
+        <div className="max-w-[1700px] flex justify-center items-center  gap-4 ">
           
           {/* LEFT */}
           <div className="flex flex-col gap-4">
@@ -65,7 +65,7 @@ export default function Page() {
                 }
               `}
             >
-              <div className="flex flex-col gap-6 h-full">
+              <div className="flex flex-col  gap-6 h-full">
                 
                 <div>
                   <h1 className="text-4xl md:text-5xl font-black text-white">
