@@ -42,12 +42,12 @@ export default function Page() {
       </div>
 
       {/* PAGE */}
-      <main className="relative min-h-screen w-full overflow-hidden px-3 py-6 md:px-8">
+      <main className="relative min-h-screen flex justify-center w-full overflow-hidden md:px-2   py-3 md:px-8">
         
-        <div className="max-w-[1700px] flex justify-center items-center  gap-4 ">
+        <div className="max-w-[1700px] flex justify-center items-center  gap-4 overflow-hidden">
           
           {/* LEFT */}
-          <div className="flex flex-col gap-4">
+          <div className=" flex flex-col  gap-2 md:gap-4 ">
             
             {/* WORK */}
             <Cards
@@ -58,10 +58,10 @@ export default function Page() {
               styles={`
                 ${
                   expandedCard === "card1"
-                    ? "h-[88vh]"
+                    ? "h-[78vh] w-[90vw] absolute left-11 z-9 md:h-[80vh] md:w-auto "
                     : expandedCard
-                    ? "h-[120px] opacity-30 scale-[0.97]"
-                    : "h-[260px]"
+                    ? "h-[70px] w-[70px]  md:h-[100px] md:w-[100px] opacity-30 scale-[0.97]"
+                    : "h-[100px] items-center w-[100px]"
                 }
               `}
             >
@@ -72,7 +72,7 @@ export default function Page() {
                     Work
                   </h1>
 
-                  <p className="text-neutral-400 mt-2">
+                  <p className="text-neutral-400 mt-2 ">
                     Selected projects and digital experiences.
                   </p>
                 </div>
@@ -156,10 +156,10 @@ export default function Page() {
               styles={`
                 ${
                   expandedCard === "card2"
-                    ? "h-[88vh]"
+                    ?  "h-[78vh] w-[90vw] absolute left-11 bottom-7 z-9 md:h-[80vh] md:w-auto "
                     : expandedCard
-                    ? "h-[120px] opacity-30 scale-[0.97]"
-                    : "h-[260px]"
+                    ? "h-[70px] w-[70px]  md:h-[100px] md:w-[100px] opacity-30 scale-[0.97]"
+                    : "h-[100px] items-center w-[100px]"
                 }
               `}
             >
@@ -176,16 +176,17 @@ export default function Page() {
                 </div>
 
                 {/* buttons */}
-                <div className="flex flex-wrap gap-3">
+                <div className="flex  gap-3">
                   {stacksBtn.map((btn) => (
                     <button
                       key={btn.id}
                       onClick={() => setStackState(btn.id)}
                       className={`
-                        px-5
-                        py-3
+                        px-3
+                        py-1
+                        w-20
                         rounded-2xl
-                        text-sm
+                        text-[0.46rem]
                         font-medium
                         transition-all
                         duration-300
@@ -214,13 +215,13 @@ export default function Page() {
                           border
                           border-white/10
                           rounded-3xl
-                          p-5
+                          
                           hover:bg-white/[0.06]
                           transition-all
                           duration-300
                         "
                       >
-                        <p className="text-white font-medium">
+                        <p className="text-white font-medium ">
                           {stack.title}
                         </p>
                       </div>
@@ -239,7 +240,7 @@ export default function Page() {
                           border
                           border-white/10
                           rounded-3xl
-                          p-5
+                          
                           hover:bg-white/[0.06]
                           transition-all
                           duration-300
@@ -293,10 +294,10 @@ export default function Page() {
               styles={`
                 ${
                   expandedCard === "card3"
-                    ? "h-[88vh]"
+                    ? "h-[78vh] w-[90vw] z-9 md:h-[80vh] md:w-auto "
                     : expandedCard
-                    ? "h-[120px] opacity-30 scale-[0.97]"
-                    : "h-[260px]"
+                    ? "h-[70px] w-[70px]  md:h-[100px] md:w-[100px] opacity-30 scale-[0.97]"
+                    : "h-[100px] items-center w-[100px]"
                 }
               `}
             >
@@ -380,10 +381,10 @@ export default function Page() {
               styles={`
                 ${
                   expandedCard === "card4"
-                    ? "h-[88vh]"
+                    ? "h-[78vh] w-[90vw] z-9 md:h-[80vh] md:w-auto "
                     : expandedCard
-                    ? "h-[120px] opacity-30 scale-[0.97]"
-                    : "h-[260px]"
+                    ? "h-[70px] w-[70px]  md:h-[100px] md:w-[100px] opacity-30 scale-[0.97]"
+                    : "h-[100px] items-center w-[100px]"
                 }
               `}
             >

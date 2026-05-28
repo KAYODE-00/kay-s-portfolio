@@ -64,8 +64,8 @@ function Cards({
         <div className="absolute -top-20 -right-20 w-60 h-60 bg-emerald-400/5 blur-3xl rounded-full" />
 
         {!isExpanded && (
-          <div className="relative z-10 h-full flex items-end p-6">
-            <h1 className="text-2xl md:text-3xl font-black text-white">
+          <div className="relative  z-10 h-full flex items-center  justify-cen p-6">
+            <h1 className="text-xl   font-black text-white">
               {title}
             </h1>
           </div>
