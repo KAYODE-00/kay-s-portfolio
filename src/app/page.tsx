@@ -213,6 +213,10 @@ export default function Page() {
                         className="
                           bg-white/[0.03]
                           border
+                          w-25
+                          md:w-30
+                          py-2
+                          px-3
                           border-white/10
                           rounded-3xl
                           
@@ -221,7 +225,7 @@ export default function Page() {
                           duration-300
                         "
                       >
-                        <p className="text-white font-medium ">
+                        <p className="text-white font-medium  text-sm   ">
                           {stack.title}
                         </p>
                       </div>
@@ -238,6 +242,9 @@ export default function Page() {
                         className="
                           bg-white/[0.03]
                           border
+                          md:w-30
+                          py-2
+                          px-3
                           border-white/10
                           rounded-3xl
                           
@@ -246,7 +253,7 @@ export default function Page() {
                           duration-300
                         "
                       >
-                        <p className="text-white font-medium">
+                        <p className="text-white font-medium  text-sm  ">
                           {stack.title}
                         </p>
                       </div>
@@ -263,6 +270,9 @@ export default function Page() {
                         className="
                           bg-white/[0.03]
                           border
+                          md:w-30
+                          py-2
+                          px-3
                           border-white/10
                           rounded-3xl
                           p-5
@@ -271,7 +281,7 @@ export default function Page() {
                           duration-300
                         "
                       >
-                        <p className="text-white font-medium">
+                        <p className="text-white font-medium  text-sm  ">
                           {stack.title}
                         </p>
                       </div>
@@ -294,7 +304,7 @@ export default function Page() {
               styles={`
                 ${
                   expandedCard === "card3"
-                    ? "h-[78vh] w-[90vw] z-9 md:h-[80vh] md:w-auto "
+                    ?  "h-[78vh] w-[90vw] absolute right-11  z-9 md:h-[80vh] md:w-auto  "
                     : expandedCard
                     ? "h-[70px] w-[70px]  md:h-[100px] md:w-[100px] opacity-30 scale-[0.97]"
                     : "h-[100px] items-center w-[100px]"
@@ -381,7 +391,7 @@ export default function Page() {
               styles={`
                 ${
                   expandedCard === "card4"
-                    ? "h-[78vh] w-[90vw] z-9 md:h-[80vh] md:w-auto "
+                     ?  "h-[78vh] w-[90vw] absolute right-11 bottom-7 z-9 md:h-[80vh] md:w-auto  "
                     : expandedCard
                     ? "h-[70px] w-[70px]  md:h-[100px] md:w-[100px] opacity-30 scale-[0.97]"
                     : "h-[100px] items-center w-[100px]"
@@ -393,7 +403,7 @@ export default function Page() {
                 {/* glow */}
                 <div className="absolute top-0 right-0 w-72 h-72 bg-emerald-400/10 blur-3xl rounded-full" />
 
-                <div className="relative z-10 flex flex-col gap-8 h-full">
+                <div className="relative z-10 flex flex-col  gap-5 md:gap-8 h-full">
                   
                   {/* header */}
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
@@ -403,7 +413,7 @@ export default function Page() {
                         Contact
                       </h1>
 
-                      <p className="text-neutral-400 mt-2 max-w-[550px]">
+                      <p className="text-neutral-400 mt-2 text-[0.6rem] md:text-sm max-w-[550px]">
                         Talk with my AI assistant or send a direct
                         message for projects, startups and collaborations.
                       </p>
@@ -419,7 +429,7 @@ export default function Page() {
                   </div>
 
                   {/* content */}
-                  <div className="grid xl:grid-cols-2 gap-6 h-full">
+                  <div className="grid xl:grid-cols-2 items-center justify-center gap-4 md:gap-6 h-full px-5">
                     
                     {/* ai side */}
                     <div
@@ -428,24 +438,28 @@ export default function Page() {
                         bg-white/[0.03]
                         border
                         border-white/10
-                        p-6
+                       w-[80vw]
+                        p-3 md:p-6
+                        place-self-center
                         flex
                         flex-col
                         justify-between
-                        gap-6
+                        gap-4 md:gap-6
                       "
                     >
-                      <div className="flex flex-col gap-5">
+                      <div className="flex flex-col items-center gap-5">
                         
-                        <div className="flex items-center gap-4">
+                        <div className="flex items-center gap-2 md:gap-4">
                           
                           <div className="relative">
                             <img
                               src="/devImg.jpg"
                               alt=""
                               className="
-                                w-24
-                                h-24
+                              w-20
+                              h-20
+                                md:w-24
+                                md:h-24
                                 rounded-[1.5rem]
                                 object-cover
                                 border
@@ -458,19 +472,19 @@ export default function Page() {
                             </div>
                           </div>
 
-                          <div>
-                            <h1 className="text-3xl font-black text-white">
+                          <div >
+                            <h1 className="text-sm md:text-3xl font-black text-white">
                               Abdulwahab AI
                             </h1>
 
-                            <p className="text-neutral-400 text-sm mt-2">
+                            <p className="text-neutral-400 text-[0.6rem] md:text-sm mt-2">
                               A digital version of me trained for
                               founders, developers and creators.
                             </p>
                           </div>
                         </div>
 
-                        <div className="flex flex-wrap gap-3">
+                        <div className=" flex flex-wrap justify-center  gap-2 md:gap-3">
                           {[
                             "AI Builders",
                             "SaaS",
@@ -482,13 +496,20 @@ export default function Page() {
                             <div
                               key={item}
                               className="
-                                px-4
-                                py-2
+                              px-2
+                              py-1
+                                md:px-4
+                                md:py-2
+                                w-20
+                                h-6
+                                md:w-auto
+                                md:h-auto
+text-center
                                 rounded-full
                                 bg-white/[0.05]
                                 border
                                 border-white/10
-                                text-sm
+                                text-[0.6rem]
                                 text-neutral-200
                               "
                             >
@@ -498,7 +519,7 @@ export default function Page() {
                         </div>
                       </div>
 
-                      <button
+                      {/* <button
                         className="
                           h-14
                           rounded-2xl
@@ -512,7 +533,7 @@ export default function Page() {
                         "
                       >
                         Launch AI Chatbot
-                      </button>
+                      </button> */}
                     </div>
 
                     {/* form */}
