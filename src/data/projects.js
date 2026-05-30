@@ -11,7 +11,7 @@ export const projects = [
   {
     id: 2,
     title: "QAY Builder",
-    img: "/qaybuilder.png",
+    img: "/QayImg.png",
     url: "https://qay-theta.vercel.app/",
     description:
       "A no-code website builder with AI-assisted design system.",

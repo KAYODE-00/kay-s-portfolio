@@ -406,241 +406,109 @@ export default function Page() {
                   </div>
 
                   {/* content */}
-  <div className="grid xl:grid-cols-2 items-center justify-center gap-4 md:gap-6 h-full px-5">
+<div
+  className="
+    rounded-[32px]
+    border border-white/10
+    bg-white/[0.03]
+    backdrop-blur-xl
+    p-6
+    flex
+    flex-col
+    gap-5
+  "
+>
+  <div className="flex items-center justify-between">
+    <div className="flex items-center gap-4">
 
-  {/* LEFT */}
+      <img
+        src="/devImg.jpg"
+        alt=""
+        className="w-14 h-14 rounded-2xl object-cover"
+      />
+
+      <div>
+        <h2 className="text-white font-bold">
+          Abdulwahab AI
+        </h2>
+
+        <p className="text-xs text-neutral-400">
+          Ask anything about me
+        </p>
+      </div>
+    </div>
+
+    <button
+      onClick={() => setShowAiChat(!showAiChat)}
+      className="
+        w-10
+        h-10
+        rounded-xl
+        border
+        border-white/10
+        text-white
+      "
+    >
+      {showAiChat ? "−" : "+"}
+    </button>
+  </div>
+
   <div
-    className="
-      relative
+    className={`
       overflow-hidden
-      rounded-[32px]
-      border border-white/10
-      bg-[#1B211A]/70
-      backdrop-blur-3xl
-      p-5 md:p-8
       transition-all
       duration-500
-      mt-45
-      md:mt-auto
-    "
+      ${showAiChat ? "max-h-[500px]" : "max-h-0"}
+    `}
   >
-    {showAi ? (
-      <>
-        <div className="absolute    -right-24 w-72 h-72 bg-emerald-400/10 blur-3xl rounded-full" />
+    <div className="flex flex-col gap-4 pt-4">
 
-        <div className="relative z-10 h-full flex flex-col justify-between gap-8">
-
-          <div className="flex flex-col items-center text-center gap-6">
-
-            <div className="relative">
-              <img
-                src="/devImg.jpg"
-                alt=""
-                className="
-                  w-24 h-24
-                  md:w-32 md:h-32
-                  rounded-[28px]
-                  object-cover
-                  border
-                  border-white/10
-                "
-              />
-
-              <div
-                className="
-                  absolute
-                  -bottom-2
-                  -right-2
-                  px-3 py-1
-                  rounded-full
-                  bg-emerald-300
-                  text-black
-                  text-xs
-                  font-bold
-                "
-              >
-                AI
-              </div>
-            </div>
-
-            <div>
-              <h2 className="text-2xl md:text-4xl font-black text-white">
-                Abdulwahab AI
-              </h2>
-
-              <p className="text-neutral-400 text-sm md:text-base mt-3 max-w-md">
-                Your digital founder companion trained on my ideas,
-                workflows, startups and development process.
-              </p>
-            </div>
-
-            <div className="flex flex-wrap justify-center gap-2">
-              {[
-                "AI Builders",
-                "SaaS",
-                "Frontend",
-                "Branding",
-                "Next.js",
-                "Automation",
-              ].map((item) => (
-                <span
-                  key={item}
-                  className="
-                    px-4
-                    py-2
-                    rounded-full
-                    bg-white/[0.04]
-                    border
-                    border-white/10
-                    text-xs
-                    text-neutral-200
-                  "
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <button
-            onClick={() => setShowAi(!showAi)}
-            className="
-              h-14
-              rounded-2xl
-              bg-gradient-to-r
-              from-emerald-300
-              to-lime-200
-              text-black
-              font-bold
-              transition-all
-              duration-300
-              hover:scale-[1.02]
-            "
-          >
-            Contact Me Instead
-          </button>
+      <div
+        className="
+          h-[250px]
+          rounded-2xl
+          bg-black/20
+          border
+          border-white/10
+          p-4
+          overflow-y-auto
+        "
+      >
+        <div className="text-sm text-neutral-400">
+          👋 Hi, I'm Abdulwahab AI. Ask me anything.
         </div>
-      </>
-    ) : (
-      <>
-        <div className="absolute top-0 right-0 w-72 h-72 bg-white/5 blur-3xl rounded-full" />
+      </div>
 
-        <div className="relative z-10 flex flex-col gap-6 h-full">
+      <div className="flex gap-3">
+        <input
+          placeholder="Ask Abdulwahab AI..."
+          className="
+            flex-1
+            h-12
+            rounded-2xl
+            bg-black/20
+            border
+            border-white/10
+            px-4
+            text-white
+            outline-none
+          "
+        />
 
-          <div>
-            <h2 className="text-2xl md:text-4xl font-black text-white">
-              Direct Message
-            </h2>
-
-            <p className="text-neutral-400 mt-2">
-              Let's build something remarkable together.
-            </p>
-          </div>
-
-          <div className="flex flex-col gap-4 flex-1">
-
-            <input
-              placeholder="Your Name"
-              className="
-                h-14
-                rounded-2xl
-                px-5
-                bg-white/[0.04]
-                border
-                border-white/10
-                text-white
-                outline-none
-              "
-            />
-
-            <input
-              placeholder="Your Email"
-              className="
-                h-14
-                rounded-2xl
-                px-5
-                bg-white/[0.04]
-                border
-                border-white/10
-                text-white
-                outline-none
-              "
-            />
-
-            <textarea
-              rows={5}
-              placeholder="Tell me about your project..."
-              className="
-                flex-1
-                min-h-[150px]
-                rounded-2xl
-                p-5
-                bg-white/[0.04]
-                border
-                border-white/10
-                text-white
-                resize-none
-                outline-none
-              "
-            />
-
-            <button
-              className="
-                h-14
-                rounded-2xl
-                bg-gradient-to-r
-                from-white
-                to-neutral-300
-                text-black
-                font-bold
-              "
-            >
-              Send Message
-            </button>
-
-            <button
-              onClick={() => setShowAi(!showAi)}
-              className="
-                h-12
-                rounded-2xl
-                border
-                border-white/10
-                text-white
-              "
-            >
-              Back To AI Assistant
-            </button>
-          </div>
-        </div>
-      </>
-    )}
-  </div>
-
-  {/* RIGHT */}
-  <div
-    className="
-      hidden xl:flex
-      rounded-[32px]
-      border border-white/10
-      bg-white/[0.03]
-      p-8
-      items-center
-      justify-center
-      text-center
-    "
-  >
-    <div>
-      <h2 className="text-4xl font-black text-white">
-        {showAi ? "AI Assistant" : "Direct Contact"}
-      </h2>
-
-      <p className="text-neutral-400 mt-4 max-w-md">
-        Toggle between chatting with Abdulwahab AI and sending a direct
-        project inquiry.
-      </p>
+        <button
+          className="
+            px-5
+            rounded-2xl
+            bg-emerald-300
+            text-black
+            font-semibold
+          "
+        >
+          Send
+        </button>
+      </div>
     </div>
   </div>
-
 </div>
                 </div>
               </div>
