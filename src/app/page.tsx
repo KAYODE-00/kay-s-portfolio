@@ -12,6 +12,7 @@ import { useState } from "react";
 export default function Page() {
   const [expandedCard, setExpandedCard] = useState<string | null>(null);
     const [showAi,setShowAi] = useState<boolean | null>(null);
+    const [expandPanel, setExpandPanel] = useState<boolean | null>(null);
 
   const [stackState, setStackState] = useState<number | null>(1);
 
@@ -406,109 +407,145 @@ export default function Page() {
                   </div>
 
                   {/* content */}
-<div
-  className="
-    rounded-[32px]
-    border border-white/10
-    bg-white/[0.03]
-    backdrop-blur-xl
-    p-6
-    flex
-    flex-col
-    gap-5
-  "
->
-  <div className="flex items-center justify-between">
-    <div className="flex items-center gap-4">
+<div className="flex items-center justify-between gap-4">
 
+  <div className="flex items-center gap-4 min-w-0">
+
+    <div className="relative shrink-0">
       <img
         src="/devImg.jpg"
         alt=""
-        className="w-14 h-14 rounded-2xl object-cover"
+        className="
+          w-14
+          h-14
+          rounded-2xl
+          object-cover
+          border
+          border-white/10
+        "
       />
 
-      <div>
-        <h2 className="text-white font-bold">
-          Abdulwahab AI
-        </h2>
-
-        <p className="text-xs text-neutral-400">
-          Ask anything about me
-        </p>
-      </div>
+      <div
+        className="
+          absolute
+          -bottom-1
+          -right-1
+          w-4
+          h-4
+          rounded-full
+          bg-emerald-400
+          border-2
+          border-[#111]
+          animate-pulse
+        "
+      />
     </div>
 
+    <div className="min-w-0">
+      <h2 className="text-white font-bold text-lg truncate">
+        {showAi ? "Abdulwahab AI" : "Direct Contact"}
+      </h2>
+
+      <p className="text-xs text-neutral-400 truncate">
+        {showAi
+          ? "Ask anything about startups, SaaS & development"
+          : "Let's build something remarkable together"}
+      </p>
+    </div>
+
+  </div>
+
+  <div className="flex items-center gap-2">
+
+    {/* Toggle */}
+    <div
+      className="
+        flex
+        items-center
+        p-1
+        rounded-2xl
+        bg-black/20
+        border
+        border-white/10
+      "
+    >
+      <button
+        onClick={() => setShowAi(true)}
+        className={`
+          px-4
+          h-9
+          rounded-xl
+          text-xs
+          md:text-sm
+          font-medium
+          transition-all
+          duration-300
+          ${
+            showAi
+              ? "bg-emerald-300 text-black shadow-lg"
+              : "text-neutral-400 hover:text-white"
+          }
+        `}
+      >
+        AI
+      </button>
+
+      <button
+        onClick={() => setShowAi(false)}
+        className={`
+          px-4
+          h-9
+          rounded-xl
+          text-xs
+          md:text-sm
+          font-medium
+          transition-all
+          duration-300
+          ${
+            !showAi
+              ? "bg-emerald-300 text-black shadow-lg"
+              : "text-neutral-400 hover:text-white"
+          }
+        `}
+      >
+        Contact
+      </button>
+    </div>
+
+    {/* Expand */}
     <button
-      onClick={() => setShowAiChat(!showAiChat)}
+      onClick={() => setExpandPanel(!expandPanel)}
       className="
         w-10
         h-10
         rounded-xl
         border
         border-white/10
+        bg-white/[0.03]
         text-white
+        flex
+        items-center
+        justify-center
+        hover:bg-white/[0.06]
+        transition-all
+        duration-300
       "
     >
-      {showAiChat ? "−" : "+"}
-    </button>
-  </div>
-
-  <div
-    className={`
-      overflow-hidden
-      transition-all
-      duration-500
-      ${showAiChat ? "max-h-[500px]" : "max-h-0"}
-    `}
-  >
-    <div className="flex flex-col gap-4 pt-4">
-
-      <div
-        className="
-          h-[250px]
-          rounded-2xl
-          bg-black/20
-          border
-          border-white/10
-          p-4
-          overflow-y-auto
-        "
+      <span
+        className={`
+          transition-transform
+          duration-300
+          text-lg
+          font-light
+          ${expandPanel ? "rotate-180" : ""}
+        `}
       >
-        <div className="text-sm text-neutral-400">
-          👋 Hi, I'm Abdulwahab AI. Ask me anything.
-        </div>
-      </div>
+        +
+      </span>
+    </button>
 
-      <div className="flex gap-3">
-        <input
-          placeholder="Ask Abdulwahab AI..."
-          className="
-            flex-1
-            h-12
-            rounded-2xl
-            bg-black/20
-            border
-            border-white/10
-            px-4
-            text-white
-            outline-none
-          "
-        />
-
-        <button
-          className="
-            px-5
-            rounded-2xl
-            bg-emerald-300
-            text-black
-            font-semibold
-          "
-        >
-          Send
-        </button>
-      </div>
-    </div>
   </div>
+
 </div>
                 </div>
               </div>
