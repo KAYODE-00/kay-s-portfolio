@@ -10,27 +10,22 @@ import Cards from "@/components/Components/Cards";
 import { useState } from "react";
 
 export default function Page() {
-  const [expandedCard, setExpandedCard] =
-    useState<string | null>(null);
+  const [expandedCard, setExpandedCard] = useState<string | null>(null);
+    const [showAi,setShowAi] = useState<boolean | null>(null);
 
-  const [stackState, setStackState] =
-    useState<number | null>(1);
+  const [stackState, setStackState] = useState<number | null>(1);
 
   return (
     <>
       {/* BACKGROUND */}
       <div className="fixed inset-0 overflow-hidden -z-10 bg-[#0B100B]">
-        
         {/* gradient */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(95,255,145,0.08),transparent_35%)]" />
 
         {/* bubbles */}
         <div className="relative w-full h-full flex items-center justify-center">
           {[1, 2, 3, 4, 5].map((_, index) => (
-            <div
-              key={index}
-              className={`bubble bubble-${index + 1}`}
-            >
+            <div key={index} className={`bubble bubble-${index + 1}`}>
               <span></span>
               <span></span>
               <span></span>
@@ -43,12 +38,9 @@ export default function Page() {
 
       {/* PAGE */}
       <main className="relative min-h-screen flex justify-center w-full overflow-hidden md:px-2   py-3 md:px-8">
-        
         <div className="max-w-[1700px] flex justify-center items-center  gap-4 overflow-hidden">
-          
           {/* LEFT */}
           <div className=" flex flex-col  gap-2 md:gap-4 ">
-            
             {/* WORK */}
             <Cards
               id="card1"
@@ -60,13 +52,12 @@ export default function Page() {
                   expandedCard === "card1"
                     ? "h-[78vh] w-[90vw] absolute left-11 z-9 md:h-[80vh] md:w-auto "
                     : expandedCard
-                    ? "h-[70px] w-[70px]  md:h-[100px] md:w-[100px] opacity-30 scale-[0.97]"
-                    : "h-[100px] items-center w-[100px]"
+                      ? "h-[70px] w-[70px]  md:h-[100px] md:w-[100px] opacity-30 scale-[0.97]"
+                      : "h-[100px] items-center w-[100px]"
                 }
               `}
             >
               <div className="flex flex-col  gap-6 h-full">
-                
                 <div>
                   <h1 className="text-4xl md:text-5xl font-black text-white">
                     Work
@@ -109,7 +100,6 @@ export default function Page() {
                       </div>
 
                       <div className="p-5 flex flex-col gap-4">
-                        
                         <div className="flex items-center justify-between gap-4">
                           <h1 className="text-xl font-bold text-white">
                             {project.title}
@@ -156,15 +146,14 @@ export default function Page() {
               styles={`
                 ${
                   expandedCard === "card2"
-                    ?  "h-[78vh] w-[90vw] absolute left-11 bottom-7 z-9 md:h-[80vh] md:w-auto "
+                    ? "h-[78vh] w-[90vw] absolute left-11 bottom-7 z-9 md:h-[80vh] md:w-auto "
                     : expandedCard
-                    ? "h-[70px] w-[70px]  md:h-[100px] md:w-[100px] opacity-30 scale-[0.97]"
-                    : "h-[100px] items-center w-[100px]"
+                      ? "h-[70px] w-[70px]  md:h-[100px] md:w-[100px] opacity-30 scale-[0.97]"
+                      : "h-[100px] items-center w-[100px]"
                 }
               `}
             >
               <div className="flex flex-col gap-6 h-full">
-                
                 <div>
                   <h1 className="text-4xl md:text-5xl font-black text-white">
                     Stacks
@@ -294,7 +283,6 @@ export default function Page() {
 
           {/* RIGHT */}
           <div className="flex flex-col gap-4">
-            
             {/* ABOUT */}
             <Cards
               id="card3"
@@ -304,15 +292,14 @@ export default function Page() {
               styles={`
                 ${
                   expandedCard === "card3"
-                    ?  "h-[78vh] w-[90vw] absolute right-11  z-9 md:h-[80vh] md:w-auto  "
+                    ? "h-[78vh] w-[90vw] absolute right-11  z-9 md:h-[80vh] md:w-auto  "
                     : expandedCard
-                    ? "h-[70px] w-[70px]  md:h-[100px] md:w-[100px] opacity-30 scale-[0.97]"
-                    : "h-[100px] items-center w-[100px]"
+                      ? "h-[70px] w-[70px]  md:h-[100px] md:w-[100px] opacity-30 scale-[0.97]"
+                      : "h-[100px] items-center w-[100px]"
                 }
               `}
             >
               <div className="flex flex-col gap-8">
-                
                 <div>
                   <h1 className="text-4xl md:text-5xl font-black text-white">
                     About
@@ -324,7 +311,6 @@ export default function Page() {
                 </div>
 
                 <div className="flex flex-col md:flex-row gap-6">
-                  
                   <img
                     src="/devImg.jpg"
                     alt=""
@@ -340,17 +326,15 @@ export default function Page() {
                   />
 
                   <div className="flex flex-col gap-5">
-                    
                     <div>
                       <h1 className="text-3xl font-black text-white">
                         Abdulwahab Kayode
                       </h1>
 
                       <p className="text-neutral-300 mt-2 leading-relaxed">
-                        I build modern interfaces, AI-powered products,
-                        scalable startup systems and immersive digital
-                        experiences with strong focus on design systems
-                        and performance.
+                        I build modern interfaces, AI-powered products, scalable
+                        startup systems and immersive digital experiences with
+                        strong focus on design systems and performance.
                       </p>
                     </div>
 
@@ -371,9 +355,7 @@ export default function Page() {
                             p-4
                           "
                         >
-                          <p className="text-sm text-white">
-                            {item}
-                          </p>
+                          <p className="text-sm text-white">{item}</p>
                         </div>
                       ))}
                     </div>
@@ -391,246 +373,275 @@ export default function Page() {
               styles={`
                 ${
                   expandedCard === "card4"
-                     ?  "h-[78vh] w-[90vw] absolute right-11 bottom-7 z-9 md:h-[80vh] md:w-auto  "
+                    ? "h-[78vh] w-[90vw] absolute right-11 bottom-7 z-9 md:h-[80vh] md:w-auto  "
                     : expandedCard
-                    ? "h-[70px] w-[70px]  md:h-[100px] md:w-[100px] opacity-30 scale-[0.97]"
-                    : "h-[100px] items-center w-[100px]"
+                      ? "h-[70px] w-[70px]  md:h-[100px] md:w-[100px] opacity-30 scale-[0.97]"
+                      : "h-[100px] items-center w-[100px]"
                 }
               `}
             >
               <div className="relative h-full">
-                
                 {/* glow */}
                 <div className="absolute top-0 right-0 w-72 h-72 bg-emerald-400/10 blur-3xl rounded-full" />
 
                 <div className="relative z-10 flex flex-col  gap-5 md:gap-8 h-full">
-                  
                   {/* header */}
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                    
                     <div>
                       <h1 className="text-4xl md:text-5xl font-black text-white">
                         Contact
                       </h1>
 
                       <p className="text-neutral-400 mt-2 text-[0.6rem] md:text-sm max-w-[550px]">
-                        Talk with my AI assistant or send a direct
-                        message for projects, startups and collaborations.
+                        Talk with my AI assistant or send a direct message for
+                        projects, startups and collaborations.
                       </p>
                     </div>
 
                     <div className="flex items-center gap-3 bg-emerald-500/10 border border-emerald-400/20 px-4 py-2 rounded-full w-fit">
                       <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
 
-                      <p className="text-xs text-emerald-200">
-                        AI Online
-                      </p>
+                      <p className="text-xs text-emerald-200">AI Online</p>
                     </div>
                   </div>
 
                   {/* content */}
-                  <div className="grid xl:grid-cols-2 items-center justify-center gap-4 md:gap-6 h-full px-5">
-                    
-                    {/* ai side */}
-                    <div
-                      className="
-                        rounded-[2rem]
-                        bg-white/[0.03]
-                        border
-                        border-white/10
-                       w-[80vw]
-                        p-3 md:p-6
-                        place-self-center
-                        flex
-                        flex-col
-                        justify-between
-                        gap-4 md:gap-6
-                      "
-                    >
-                      <div className="flex flex-col items-center gap-5">
-                        
-                        <div className="flex items-center gap-2 md:gap-4">
-                          
-                          <div className="relative">
-                            <img
-                              src="/devImg.jpg"
-                              alt=""
-                              className="
-                              w-20
-                              h-20
-                                md:w-24
-                                md:h-24
-                                rounded-[1.5rem]
-                                object-cover
-                                border
-                                border-white/10
-                              "
-                            />
+  <div className="grid xl:grid-cols-2 items-center justify-center gap-4 md:gap-6 h-full px-5">
 
-                            <div className="absolute -bottom-2 -right-2 bg-emerald-300 text-black text-xs font-bold px-3 py-1 rounded-full">
-                              AI
-                            </div>
-                          </div>
+  {/* LEFT */}
+  <div
+    className="
+      relative
+      overflow-hidden
+      rounded-[32px]
+      border border-white/10
+      bg-[#1B211A]/70
+      backdrop-blur-3xl
+      p-5 md:p-8
+      transition-all
+      duration-500
+      mt-45
+      md:mt-auto
+    "
+  >
+    {showAi ? (
+      <>
+        <div className="absolute    -right-24 w-72 h-72 bg-emerald-400/10 blur-3xl rounded-full" />
 
-                          <div >
-                            <h1 className="text-sm md:text-3xl font-black text-white">
-                              Abdulwahab AI
-                            </h1>
+        <div className="relative z-10 h-full flex flex-col justify-between gap-8">
 
-                            <p className="text-neutral-400 text-[0.6rem] md:text-sm mt-2">
-                              A digital version of me trained for
-                              founders, developers and creators.
-                            </p>
-                          </div>
-                        </div>
+          <div className="flex flex-col items-center text-center gap-6">
 
-                        <div className=" flex flex-wrap justify-center  gap-2 md:gap-3">
-                          {[
-                            "AI Builders",
-                            "SaaS",
-                            "Frontend",
-                            "Branding",
-                            "Next.js",
-                            "Automation",
-                          ].map((item) => (
-                            <div
-                              key={item}
-                              className="
-                              px-2
-                              py-1
-                                md:px-4
-                                md:py-2
-                                w-20
-                                h-6
-                                md:w-auto
-                                md:h-auto
-text-center
-                                rounded-full
-                                bg-white/[0.05]
-                                border
-                                border-white/10
-                                text-[0.6rem]
-                                text-neutral-200
-                              "
-                            >
-                              {item}
-                            </div>
-                          ))}
-                        </div>
-                      </div>
+            <div className="relative">
+              <img
+                src="/devImg.jpg"
+                alt=""
+                className="
+                  w-24 h-24
+                  md:w-32 md:h-32
+                  rounded-[28px]
+                  object-cover
+                  border
+                  border-white/10
+                "
+              />
 
-                      {/* <button
-                        className="
-                          h-14
-                          rounded-2xl
-                          bg-white
-                          text-black
-                          font-bold
-                          hover:scale-[1.02]
-                          active:scale-[0.99]
-                          transition-all
-                          duration-300
-                        "
-                      >
-                        Launch AI Chatbot
-                      </button> */}
-                    </div>
+              <div
+                className="
+                  absolute
+                  -bottom-2
+                  -right-2
+                  px-3 py-1
+                  rounded-full
+                  bg-emerald-300
+                  text-black
+                  text-xs
+                  font-bold
+                "
+              >
+                AI
+              </div>
+            </div>
 
-                    {/* form */}
-                    <div
-                      className="
-                        rounded-[2rem]
-                        bg-white/[0.03]
-                        border
-                        border-white/10
-                        p-6
-                        flex
-                        flex-col
-                        gap-5
-                      "
-                    >
-                      <div>
-                        <h1 className="text-3xl font-black text-white">
-                          Direct Message
-                        </h1>
+            <div>
+              <h2 className="text-2xl md:text-4xl font-black text-white">
+                Abdulwahab AI
+              </h2>
 
-                        <p className="text-neutral-400 mt-2 text-sm">
-                          Let’s build something powerful together.
-                        </p>
-                      </div>
+              <p className="text-neutral-400 text-sm md:text-base mt-3 max-w-md">
+                Your digital founder companion trained on my ideas,
+                workflows, startups and development process.
+              </p>
+            </div>
 
-                      <div className="flex flex-col gap-4">
-                        
-                        <input
-                          type="text"
-                          placeholder="Your Name"
-                          className="
-                            h-14
-                            rounded-2xl
-                            bg-black/20
-                            border
-                            border-white/10
-                            px-5
-                            text-white
-                            placeholder:text-neutral-500
-                            outline-none
-                            focus:border-emerald-300/40
-                          "
-                        />
+            <div className="flex flex-wrap justify-center gap-2">
+              {[
+                "AI Builders",
+                "SaaS",
+                "Frontend",
+                "Branding",
+                "Next.js",
+                "Automation",
+              ].map((item) => (
+                <span
+                  key={item}
+                  className="
+                    px-4
+                    py-2
+                    rounded-full
+                    bg-white/[0.04]
+                    border
+                    border-white/10
+                    text-xs
+                    text-neutral-200
+                  "
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
 
-                        <input
-                          type="email"
-                          placeholder="Your Email"
-                          className="
-                            h-14
-                            rounded-2xl
-                            bg-black/20
-                            border
-                            border-white/10
-                            px-5
-                            text-white
-                            placeholder:text-neutral-500
-                            outline-none
-                            focus:border-emerald-300/40
-                          "
-                        />
+          <button
+            onClick={() => setShowAi(!showAi)}
+            className="
+              h-14
+              rounded-2xl
+              bg-gradient-to-r
+              from-emerald-300
+              to-lime-200
+              text-black
+              font-bold
+              transition-all
+              duration-300
+              hover:scale-[1.02]
+            "
+          >
+            Contact Me Instead
+          </button>
+        </div>
+      </>
+    ) : (
+      <>
+        <div className="absolute top-0 right-0 w-72 h-72 bg-white/5 blur-3xl rounded-full" />
 
-                        <textarea
-                          rows={6}
-                          placeholder="Tell me about your idea..."
-                          className="
-                            rounded-2xl
-                            bg-black/20
-                            border
-                            border-white/10
-                            p-5
-                            text-white
-                            placeholder:text-neutral-500
-                            outline-none
-                            resize-none
-                            focus:border-emerald-300/40
-                          "
-                        />
+        <div className="relative z-10 flex flex-col gap-6 h-full">
 
-                        <button
-                          className="
-                            h-14
-                            rounded-2xl
-                            bg-gradient-to-r
-                            from-white
-                            to-neutral-300
-                            text-black
-                            font-bold
-                            hover:scale-[1.02]
-                            transition-all
-                            duration-300
-                          "
-                        >
-                          Send Message
-                        </button>
-                      </div>
-                    </div>
-                  </div>
+          <div>
+            <h2 className="text-2xl md:text-4xl font-black text-white">
+              Direct Message
+            </h2>
+
+            <p className="text-neutral-400 mt-2">
+              Let's build something remarkable together.
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-4 flex-1">
+
+            <input
+              placeholder="Your Name"
+              className="
+                h-14
+                rounded-2xl
+                px-5
+                bg-white/[0.04]
+                border
+                border-white/10
+                text-white
+                outline-none
+              "
+            />
+
+            <input
+              placeholder="Your Email"
+              className="
+                h-14
+                rounded-2xl
+                px-5
+                bg-white/[0.04]
+                border
+                border-white/10
+                text-white
+                outline-none
+              "
+            />
+
+            <textarea
+              rows={5}
+              placeholder="Tell me about your project..."
+              className="
+                flex-1
+                min-h-[150px]
+                rounded-2xl
+                p-5
+                bg-white/[0.04]
+                border
+                border-white/10
+                text-white
+                resize-none
+                outline-none
+              "
+            />
+
+            <button
+              className="
+                h-14
+                rounded-2xl
+                bg-gradient-to-r
+                from-white
+                to-neutral-300
+                text-black
+                font-bold
+              "
+            >
+              Send Message
+            </button>
+
+            <button
+              onClick={() => setShowAi(!showAi)}
+              className="
+                h-12
+                rounded-2xl
+                border
+                border-white/10
+                text-white
+              "
+            >
+              Back To AI Assistant
+            </button>
+          </div>
+        </div>
+      </>
+    )}
+  </div>
+
+  {/* RIGHT */}
+  <div
+    className="
+      hidden xl:flex
+      rounded-[32px]
+      border border-white/10
+      bg-white/[0.03]
+      p-8
+      items-center
+      justify-center
+      text-center
+    "
+  >
+    <div>
+      <h2 className="text-4xl font-black text-white">
+        {showAi ? "AI Assistant" : "Direct Contact"}
+      </h2>
+
+      <p className="text-neutral-400 mt-4 max-w-md">
+        Toggle between chatting with Abdulwahab AI and sending a direct
+        project inquiry.
+      </p>
+    </div>
+  </div>
+
+</div>
                 </div>
               </div>
             </Cards>
