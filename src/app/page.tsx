@@ -11,10 +11,12 @@ import { useState } from "react";
 
 export default function Page() {
   const [expandedCard, setExpandedCard] = useState<string | null>(null);
-    const [showAi,setShowAi] = useState<boolean | null>(null);
-    const [expandPanel, setExpandPanel] = useState<boolean | null>(null);
+  const [showAi, setShowAi] = useState<boolean | null>(null);
+  // const [expandPanel, setExpandPanel] = useState<boolean | null>(null);
 
   const [stackState, setStackState] = useState<number | null>(1);
+
+
 
   return (
     <>
@@ -176,7 +178,7 @@ export default function Page() {
                         py-1
                         w-20
                         rounded-2xl
-                        text-[0.46rem]
+                        text-[0.6rem]
                         font-medium
                         transition-all
                         duration-300
@@ -203,19 +205,18 @@ export default function Page() {
                         className="
                           bg-white/[0.03]
                           border
-                          w-25
+                          w-22
                           md:w-30
                           py-2
                           px-3
                           border-white/10
                           rounded-3xl
-                          
                           hover:bg-white/[0.06]
                           transition-all
                           duration-300
                         "
                       >
-                        <p className="text-white font-medium  text-sm   ">
+                        <p className="text-white font-medium  text-[0.5rem]   ">
                           {stack.title}
                         </p>
                       </div>
@@ -232,6 +233,7 @@ export default function Page() {
                         className="
                           bg-white/[0.03]
                           border
+w-22
                           md:w-30
                           py-2
                           px-3
@@ -260,6 +262,7 @@ export default function Page() {
                         className="
                           bg-white/[0.03]
                           border
+                          w-22
                           md:w-30
                           py-2
                           px-3
@@ -389,164 +392,99 @@ export default function Page() {
                   {/* header */}
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                     <div>
-                      <h1 className="text-4xl md:text-5xl font-black text-white">
-                        Contact
-                      </h1>
+                      <div className="flex items-center justify-between gap-3">
+                        <h1 className="text-4xl md:text-5xl font-black text-white">
+                          Contact
+                        </h1>
+
+                        <img
+                          src="/devImg.jpg"
+                          alt=""
+                          className="w-10 h-10 rounded-2xl object-cover"
+                          onClick={() => setShowAi(!showAi)}
+                        />
+                      </div>
 
                       <p className="text-neutral-400 mt-2 text-[0.6rem] md:text-sm max-w-[550px]">
                         Talk with my AI assistant or send a direct message for
                         projects, startups and collaborations.
                       </p>
                     </div>
-
-                    <div className="flex items-center gap-3 bg-emerald-500/10 border border-emerald-400/20 px-4 py-2 rounded-full w-fit">
-                      <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-
-                      <p className="text-xs text-emerald-200">AI Online</p>
-                    </div>
                   </div>
 
                   {/* content */}
-<div className="flex items-center justify-between gap-4">
 
-  <div className="flex items-center gap-4 min-w-0">
-
-    <div className="relative shrink-0">
-      <img
-        src="/devImg.jpg"
-        alt=""
-        className="
-          w-14
-          h-14
+                  {!showAi ? (
+                    <div className="flex flex-col gap-2 transition-all duration-400 ease">
+                    uh
+                    </div>
+                  ) : (
+                    <div className="flex flex-col gap-2 transition-all     duration-400 ease   ">
+                      <input
+                        type="text"
+                        placeholder="Your Name"
+                        className="
+          h-10
+          text-[0.6rem]
           rounded-2xl
-          object-cover
+          bg-black/20
           border
           border-white/10
-        "
-      />
-
-      <div
-        className="
-          absolute
-          -bottom-1
-          -right-1
-          w-4
-          h-4
-          rounded-full
-          bg-emerald-400
-          border-2
-          border-[#111]
-          animate-pulse
-        "
-      />
-    </div>
-
-    <div className="min-w-0">
-      <h2 className="text-white font-bold text-lg truncate">
-        {showAi ? "Abdulwahab AI" : "Direct Contact"}
-      </h2>
-
-      <p className="text-xs text-neutral-400 truncate">
-        {showAi
-          ? "Ask anything about startups, SaaS & development"
-          : "Let's build something remarkable together"}
-      </p>
-    </div>
-
-  </div>
-
-  <div className="flex items-center gap-2">
-
-    {/* Toggle */}
-    <div
-      className="
-        flex
-        items-center
-        p-1
-        rounded-2xl
-        bg-black/20
-        border
-        border-white/10
-      "
-    >
-      <button
-        onClick={() => setShowAi(true)}
-        className={`
           px-4
-          h-9
-          rounded-xl
-          text-xs
-          md:text-sm
-          font-medium
-          transition-all
-          duration-300
-          ${
-            showAi
-              ? "bg-emerald-300 text-black shadow-lg"
-              : "text-neutral-400 hover:text-white"
-          }
-        `}
-      >
-        AI
-      </button>
+          text-white
+          outline-none
+        "
+                      />
 
-      <button
-        onClick={() => setShowAi(false)}
-        className={`
+                      <input
+                        type="email"
+                        placeholder="Your Email"
+                        className="
+          h-10
+          text-[0.6rem]
+          rounded-2xl
+          bg-black/20
+          border
+          border-white/10
           px-4
-          h-9
-          rounded-xl
-          text-xs
-          md:text-sm
-          font-medium
-          transition-all
-          duration-300
-          ${
-            !showAi
-              ? "bg-emerald-300 text-black shadow-lg"
-              : "text-neutral-400 hover:text-white"
-          }
-        `}
-      >
-        Contact
-      </button>
-    </div>
+          text-white
+          outline-none
+        "
+                      />
 
-    {/* Expand */}
-    <button
-      onClick={() => setExpandPanel(!expandPanel)}
-      className="
-        w-10
-        h-10
-        rounded-xl
-        border
-        border-white/10
-        bg-white/[0.03]
-        text-white
-        flex
-        items-center
-        justify-center
-        hover:bg-white/[0.06]
-        transition-all
-        duration-300
-      "
-    >
-      <span
-        className={`
-          transition-transform
-          duration-300
-          text-lg
-          font-light
-          ${expandPanel ? "rotate-180" : ""}
-        `}
-      >
-        +
-      </span>
-    </button>
+                      <textarea
+                        rows={5}
+                        placeholder="Tell me about your project..."
+                        className="
+          rounded-2xl
+          
+           text-[0.6rem]
+          bg-black/20
+          border
+          border-white/10
+          p-3
+          text-white
+          resize-none
+          outline-none
+        "
+                      />
 
-  </div>
-
-</div>
+                      <button
+                        className="
+          h-10
+           text-[0.7rem]
+          rounded-2xl
+          bg-gradient-to-r
+          from-white
+          to-neutral-300
+          text-black
+          font-bold
+        "
+                      >
+                        Send Message
+                      </button>
+                    </div>
+                  )}
                 </div>
               </div>
             </Cards>
