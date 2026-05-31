@@ -427,3 +427,13 @@ body {
     font-family: var(--font-space-grotesk);
   }
 }
+
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

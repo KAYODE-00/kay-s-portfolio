@@ -7,16 +7,50 @@ import { stacksBtn } from "@/data/projects";
 import { noCodeStacks } from "@/data/projects";
 
 import Cards from "@/components/Components/Cards";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Page() {
   const [expandedCard, setExpandedCard] = useState<string | null>(null);
   const [showAi, setShowAi] = useState<boolean | null>(null);
+  const [messages, setMessages] = useState([
+  { role: "ai", content: "Hi 👋 How can I help you today?" },
+]);
+
+const [input, setInput] = useState("");
+const [loading, setLoading] = useState(false);
+
+const sendMessage = async () => {
+  if (!input.trim()) return;
+
+  const userMessage = { role: "user", content: input };
+  const updatedMessages = [...messages, userMessage];
+
+  setMessages(updatedMessages);
+  setInput("");
+  setLoading(true);
+
+  // Simulate AI response (replace with real API call)
+  setTimeout(() => {
+    const aiMessage = {
+      role: "ai",
+      content: "Got it. I’m processing your request and will help you build that 🚀",
+    };
+
+    setMessages((prev) => [...prev, aiMessage]);
+    setLoading(false);
+  }, 1200);
+};
   // const [expandPanel, setExpandPanel] = useState<boolean | null>(null);
 
   const [stackState, setStackState] = useState<number | null>(1);
 
+const endRef = useRef<HTMLDivElement | null>(null);
 
+useEffect(() => {
+  requestAnimationFrame(() => {
+    endRef.current?.scrollIntoView({ behavior: "smooth" });
+  });
+}, [messages, loading]);
 
   return (
     <>
@@ -413,78 +447,66 @@ w-22
                   </div>
 
                   {/* content */}
+{showAi ? (
+<div className="flex flex-col h-[300px] gap-3">
 
-                  {!showAi ? (
-                    <div className="flex flex-col gap-2 transition-all duration-400 ease">
-                    uh
-                    </div>
-                  ) : (
-                    <div className="flex flex-col gap-2 transition-all     duration-400 ease   ">
-                      <input
-                        type="text"
-                        placeholder="Your Name"
-                        className="
-          h-10
-          text-[0.6rem]
-          rounded-2xl
-          bg-black/20
-          border
-          border-white/10
-          px-4
-          text-white
-          outline-none
-        "
-                      />
+  {/* Messages */}
+  <div className="flex-1 overflow-y-auto flex flex-col gap-2 pr-2 no-scrollbar">
 
-                      <input
-                        type="email"
-                        placeholder="Your Email"
-                        className="
-          h-10
-          text-[0.6rem]
-          rounded-2xl
-          bg-black/20
-          border
-          border-white/10
-          px-4
-          text-white
-          outline-none
-        "
-                      />
+    {messages.map((msg, i) => (
+      <div
+        key={i}
+        className={`max-w-[80%] px-3 py-2 rounded-2xl text-[0.7rem] ${
+          msg.role === "user"
+            ? "ml-auto bg-white text-black"
+            : "mr-auto bg-white/10 text-white"
+        }`}
+      >
+        {msg.content}
+      </div>
+    ))}
 
-                      <textarea
-                        rows={5}
-                        placeholder="Tell me about your project..."
-                        className="
-          rounded-2xl
-          
-           text-[0.6rem]
-          bg-black/20
-          border
-          border-white/10
-          p-3
-          text-white
-          resize-none
-          outline-none
-        "
-                      />
+    {loading && (
+      <div className="mr-auto text-[0.65rem] text-white/60 animate-pulse">
+        AI is thinking...
+      </div>
+    )}
 
-                      <button
-                        className="
-          h-10
-           text-[0.7rem]
-          rounded-2xl
-          bg-gradient-to-r
-          from-white
-          to-neutral-300
-          text-black
-          font-bold
-        "
-                      >
-                        Send Message
-                      </button>
-                    </div>
-                  )}
+    {/* 👇 scroll anchor */}
+    <div ref={endRef} />
+  </div>
+
+  {/* Input */}
+  <div className="flex gap-2 z-10 mb-3">
+    <input
+      value={input}
+      onChange={(e) => setInput(e.target.value)}
+      onKeyDown={(e) => e.key === "Enter" && sendMessage()}
+      placeholder="Ask something..."
+      className="
+      w-[30%]
+        flex-1 h-10 text-[0.7rem]
+        rounded-2xl bg-black/20 border border-white/10
+        px-4 text-white outline-none
+      "
+    />
+
+    <button
+      onClick={sendMessage}
+      className="
+        h-10 px-4 rounded-2xl
+        bg-gradient-to-r from-white to-neutral-300
+        text-black font-bold text-[0.7rem]
+        active:scale-95 transition
+      "
+    >
+      Send
+    </button>
+  </div>
+
+</div>
+) : (<div className="flex flex-col gap-2 transition-all duration-400 ease "> <input type="text" placeholder="Your Name" className=" h-10 text-[0.6rem] rounded-2xl bg-black/20 border border-white/10 px-4 text-white outline-none " /> <input type="email" placeholder="Your Email" className=" h-10 text-[0.6rem] rounded-2xl bg-black/20 border border-white/10 px-4 text-white outline-none " /> <textarea rows={5} placeholder="Tell me about your project..." className=" rounded-2xl text-[0.6rem] bg-black/20 border border-white/10 p-3 text-white resize-none outline-none " /> <button className=" h-10 text-[0.7rem] rounded-2xl bg-gradient-to-r from-white to-neutral-300 text-black font-bold " > Send Message </button> </div>
+)}
                 </div>
               </div>
             </Cards>
