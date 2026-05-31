@@ -320,7 +320,7 @@ w-22
           </div>
 
           {/* RIGHT */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 ">
             {/* ABOUT */}
             <Cards
               id="card3"
@@ -477,7 +477,7 @@ w-22
   </div>
 
   {/* Input */}
-  <div className="flex gap-2 z-10 mb-3">
+  <div className="flex gap-2 z-10 ">
     <input
       value={input}
       onChange={(e) => setInput(e.target.value)}
